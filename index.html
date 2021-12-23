@@ -13,6 +13,7 @@
 <meta name="description" content="Generated QR Code From Text"/>
 <!-- Google Verification & Searching Engine -->
 <meta name="google-site-verification" content="LrdTUW9psUAMbh4Ia074-BPEVmcpBxF6Gwf0MSgQXZs">
+<script src="https://kit.fontawesome.com/7c094ed9ba.js" crossorigin="anonymous"></script>
 <style>
 *, body{ margin:0;
 	 padding:0;
@@ -68,7 +69,7 @@ input[type=txt] {
   padding: 8px 8px;
   margin: 8px 0;
   border: 1px solid #e7e7e7;
-  border-radius: 1px;
+  border-radius: 4px;
   box-sizing: border-box;
   font-family: 'incosolata';
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -92,63 +93,91 @@ input[type=button] {
  background-color: #006cff;
  border-top: 2px solid #0042ff;
  border-bottom: 2px solid #006cff;
+ border-right: 2px solid #006cff;
+ border-left: 2px solid #0042ff;
  width: 100%;
  background-color: #006cff;
  color: white;
  padding: 8px 8px;
  margin: 8px 0;
  border-radius: 4px;
- box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+ box-shadow: rgba(0, 0, 0, 0.40) 1.95px 1.95px 2.6px;
 }
 .button-hover:hover {
 	background-color: #ff8800;
+	border-left: 2px solid #ff8800;
 	border-top: 2px solid #ff8800;
 	border-bottom: 2px solid #ff0a00;
+	border-right: 2px solid #ff0a00;
+	box-shadow: rgba(0, 20, 20, 0.40) 1.95px 1.95px 2.6px;
 }
+.float-right {
+ float: right;
+}
+.navbar-link {
+  padding: 15px;
+  top:0;
+  left:0;
+  width: auto;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  position: fixed;
+  box-shadow: rgba(0, 20, 20, 0.40) 1.95px 1.95px 2.6px;
+  background-color: rgba(20, 20, 20, 0.45);
+}
+.hr-c {
+  background-color: gray;
+  border: 0.2px solid gray;
+  decoration: none;
+  width: 250px;
+}
+.navbar-link a { color: white;}
 </style>
 </head>
 <body>
-<div class="box responsive-pages" style="position: -webkit-sticky; position: sticky; top: 0; border-bottom: 2px solid #e7e7e7;">
-<a href="https://ernestoyoofi.github.io/" class="responsive-pages"><b>Go To Website "Ernesto Yoofi | Home"</b></a>
+<div class="box responsive-pages" style="position: -webkit-sticky; position: sticky; top: 0; border-bottom: 2px solid #e7e7e7; overflow: auto;">
+<a onclick="ShowBar()"><b><i class="fas fa-bars"></i></b></a>
 </div>
-<p class="space-sm"></p>
+<p class="space-sm" id="input-text"></p>
 <div class="box responsive-pages">
 <center><b>Generated Text To QR Code</b></center>
-<input id="text" type="search" style="width:100%" placeholder="Put Text Or URL In Here" value="https://ernestoyoofi.github.io/qr-code/">
+<input id="text" type="search" style="width:100%" placeholder="Put Text Or URL In Here" value="https://ernestoyoofi.github.io/qr-code/" name="qr-code">
 <input class="button-hover" type="button" value="Generated"onclick="alert('Success Generated'); ">
+<a href="#tutorial" style="font-size: 12px">Tutorial Pleas !</a>
 </div>
-<p class="space-sm"></p>
+<p class="space-sm" id="qr-code"></p>
 <div class="box responsive-pages">
-<center><b>Results Code QR Code</b></center>
+<center><b>Results Code QR Code :</b></center>
 <br><br>
-<div class="center" id="qrcode"></div>
+<center><p class="center" id="qrcode"></p></center>
 <br><br><b style="color: white;">Warning! ,If the QR Code can't be scanned in Dark Mode, Use Light Mode</b>
 <!-- Animation -->
 </div>
-<p class="space-sm"></p>
+<p class="space-sm" id="tutorial"></p>
 <div class="box responsive-pages">
+<center><b>Tutorial :</b></center>
 <center><video autoplay loop muted style="width: 100%">
 	<source src="file/Scan QR Code.mp4" type="video/mp4">
 </video></center>
 </div>
-<p class="space-sm"></p>
+<p class="space-sm" id="code-script"></p>
 <div class="box responsive-pages">
 <center><b>Script QR Code :</b></center>
 <br>
 <p>HTML Code :</p>
-<input type="txt" style="width: 100%" id="script-1" value='<input id="text" type="text" style="width:100%" placeholder="Put Text Or URL In Here" value="https://ernestoyoofi.github.io/qr-code">
+<input type="txt" style="width: 100%" placeholder="Don't Delete This Text" id="script-1" value='<input id="text" type="text" style="width:100%" placeholder="Put Text Or URL In Here" value="Put Text Or URL In Here">
 <input type="button" value="Generated"><br><div class="center"id="qrcode"></div>'>
 <p style="20px"></p>
 <p>Java Script Code :</p>
-<input type="txt" style="width: 100%" id="script-2" value='<script src="https://ernestoyoofi.github.io/qr-code/script/jquery-min.js"></script><script src="https://ernestoyoofi.github.io/qr-code/script/qrcode-min.js"></script><script src="https://ernestoyoofi.github.io/qr-code/script/qrcode-display-min.js"></script>'>
+<input type="txt" placeholder="Don't Delete This Text" style="width: 100%" id="script-2" value='<script src="https://ernestoyoofi.github.io/qr-code/script/jquery-min.js"></script><script src="https://ernestoyoofi.github.io/qr-code/script/qrcode-min.js"></script><script src="https://ernestoyoofi.github.io/qr-code/script/qrcode-display-min.js"></script>'>
 <p class="space-sm"></p>
 <p>Full Code In Github Repository :</p>
 <input class="button-hover" type="button" value="Go To The Project Github Repository" onclick="window.location='https://github.com/ernestoyoofi/qr-code/tree/main'">
 <p style="padding-top: 10px"></p>
 </div>
-<p class="space-sm"></p>
+<p class="space-sm" id="comments"></p>
 <div class="box responsive-pages">
-<center><b>Comments</b></center>
+<center><b>Comments :</b></center>
 <p class="space-sm"></p>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v12.0" nonce="0SXAV5bM"></script>
@@ -156,11 +185,37 @@ input[type=button] {
 </div>
 <p class="space-sm"></p>
 <a href="https://github.com/ernestoyoofi"><div class="box responsive-pages">
-<center><b>Created By Ernestoyoofi 2021</b></center>
+<center><b>Created By Ernestoyoofi 2021</b><p style="font-size: 10px;">Free To Use</p></center>
 </div></a>
 <p class="space-sm"></p>
+<div class="navbar-link" style="display:none;"id="bar-item">
+<a onclick="ShowBar()"><b><i class="fas fa-times"></i></b></a>
+<p id="bars-btn"></p>
+<p style="padding-top: 20px"></p>
+<hr class="hr-c">
+<br>
+<a href="https://ernestoyoofi.github.io/"><b><i class="fas fa-home"></i> Go To Website "Ernesto Yoofi | Home"</b></a>
+<p style="padding-top: 10px"></p>
+<a href=""><b><i class="fab fa-github"></i> Go To Github Repository</b> <b style="color: aqua; font-size: 5px; padding-left: 10px;">New</b></a>
+<p style="padding-top: 10px"></p>
+<hr class="hr-c">
+<p style="padding-top: 10px"></p>
+<a href="#input-text"onclick="ShowBar()"><b><i class="fa fa-file"></i> Input Text</b></a>
+<p style="padding-top: 10px"></p>
+<a href="#qr-code"onclick="ShowBar()"><b><i class="fas fa-qrcode"></i> Results QR Code</b></a>
+<p style="padding-top: 10px"></p>
+<a href="#tutorial"onclick="ShowBar()"><b><i class="fas fa-info"></i> Tutorial</b></a>
+<p style="padding-top: 10px"></p>
+<a href="#code-script"onclick="ShowBar()"><b><i class="fa fa-code"></i> Code Script</b></a>
+<p style="padding-top: 10px"></p>
+<a href="#comments"onclick="ShowBar()"><b><i class="fa fa-commenting"></i> Comments</b></a>
+<p style="padding-top: 10px"></p>
+<hr class="hr-c">
+<a href="https://ernestoyoofi.github.io/">Ernestoyoofi 2021</a>
+</div>
 <script src="script/jquery-min.js"></script>
 <script src="script/qrcode-min.js"></script>
 <script src="script/qrcode-display-min.js"></script>
+<script src="script/navbar-button.js"></script>
 </body>
 </html>
